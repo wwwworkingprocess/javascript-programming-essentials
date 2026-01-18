@@ -7,8 +7,18 @@ function performOperation() {
     // Check if inputs are valid numbers
     if (!isNaN(num1) && !isNaN(num2)) {
     // Perform the operation
-        let result = multiply(num1, num2);
+        
+        const addResult = add(num1, num2);
+        const subResult = sub(num1, num2);
+        const mulResult = multiply(num1, num2);
+        const divResult = div(num1, num2);
 
+        const result = `Results:<br/><br/>
+        Addition: ${addResult}   ( = ${num1} + ${num2})<br/>
+        Substract: ${subResult}  ( = ${num1} - ${num2})<br/>
+        <b>Multiplication: ${mulResult}  ( = ${num1} * ${num2})</b><br/>
+        Division: ${divResult}   ( = ${num1} / ${num2})<br/>
+        `;
         // Display the result
         displayResult(result);
     } else {
@@ -24,9 +34,33 @@ function multiply(a, b) {
     return a * b;
 }
 
+function add(a, b) {
+    // Introduce a debugger statement to pause execution
+    debugger;
+
+    // Add the numbers
+    return a + b;
+}
+
+function sub(a, b) {
+    // Introduce a debugger statement to pause execution
+    debugger;
+
+    // Substract the numbers
+    return a - b;
+}
+
+function div(a, b) {
+    // Introduce a debugger statement to pause execution
+    debugger;
+
+    // Divide the numbers
+    return a / b; // will result in a float
+}
+
 function displayResult(result) {
     // Display the result in the paragraph element
     const resultElement = document.getElementById('result');
-    resultElement.textContent = `The result is: ${result}`;
+    resultElement.innerHTML = result;
 }
         
